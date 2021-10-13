@@ -1,0 +1,15 @@
+header.header
+    .header__menu
+        a.header__row(href='/overview')
+            | ALL TOURS
+        .header__row
+            img(src='../../../public/assets/logo/logo-white.png' alt='')
+        .header__row
+            .header__authorization-wrapper
+                if user
+                    a.link-logout LOGOUT
+                    a.link-me(href="/me")
+                        img.header-img-preview(src=`../../../public/assets/users/${user.photo}`)
+                else
+                    a.link-login(href='/login') LOG IN
+                    a.link-signup.link-active(href='/signup') SIGN UP

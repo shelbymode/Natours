@@ -1,0 +1,100 @@
+extends ./layout/layout
+
+block stylesheets
+  link(rel='stylesheet' href='../../dist/css/layouts/main/card.css')
+  link(rel='stylesheet' href='../../dist/css/layouts/modal/modal.css')
+
+
+block content
+  .container
+    .main
+      each tour in tours
+        - let classes = {'card--buyed': bookingTours.includes(tour.slug) && !addReview}
+        .card(class =classes)
+          header.card__header
+            img.card__img-background(src=`public/assets/tours/${tour.imageCover}` alt='')
+            .card__background
+              -
+                const nameArray = tour.name.split(' ')
+                let title1 = [nameArray[0].toUpperCase(), nameArray[1].toUpperCase()]
+                let title2 = []
+                for (let i = 0; i < nameArray.length; i++) {
+                  if (i > 1) {
+                    title2.push(nameArray[i].toUpperCase())
+                  }
+                }
+                title1 = title1.join(' ')
+                title2 = title2.join(' ')
+
+            span.card__tour-title1= title1
+            span.card__tour-title2= title2
+          main.card__main
+            h3.card__tour-desc-title=`${tour.difficulty} ${tour.duration}-DAY TOUR`
+            p.card__tour-desc= tour.summary
+            .card__info-points-wrapper
+              .card__info-point-1.card__info-point
+                svg#Capa_1(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve')
+                  g
+                    g
+                      path(d='M256,0C156.748,0,76,80.748,76,180c0,33.534,9.289,66.26,26.869,94.652l142.885,230.257\
+                         c2.737,4.411,7.559,7.091,12.745,7.091c0.04,0,0.079,0,0.119,0c5.231-0.041,10.063-2.804,12.75-7.292L410.611,272.22\
+                         C427.221,244.428,436,212.539,436,180C436,80.748,355.252,0,256,0z M384.866,256.818L258.272,468.186l-129.905-209.34\
+                         C113.734,235.214,105.8,207.95,105.8,180c0-82.71,67.49-150.2,150.2-150.2S406.1,97.29,406.1,180\
+                         C406.1,207.121,398.689,233.688,384.866,256.818z')
+                  g
+                    g
+                      path(d='M256,90c-49.626,0-90,40.374-90,90c0,49.309,39.717,90,90,90c50.903,0,90-41.233,90-90C346,130.374,305.626,90,256,90z\
+                         M256,240.2c-33.257,0-60.2-27.033-60.2-60.2c0-33.084,27.116-60.2,60.2-60.2s60.1,27.116,60.1,60.2\
+                         C316.1,212.683,289.784,240.2,256,240.2z')
+                |                     #{tour.startLocation.description}
+              .card__info-point-2.card__info-point
+                svg#Layer_1(enable-background='new 0 0 512 512' height='512' viewbox='0 0 512 512' width='512' xmlns='http://www.w3.org/2000/svg')
+                  g
+                    path(d='m446 40h-46v-24c0-8.836-7.163-16-16-16s-16 7.164-16 16v24h-224v-24c0-8.836-7.163-16-16-16s-16 7.164-16 16v24h-46c-36.393 0-66 29.607-66 66v340c0 36.393 29.607 66 66 66h380c36.393 0 66-29.607 66-66v-340c0-36.393-29.607-66-66-66zm-380 32h46v16c0 8.836 7.163 16 16 16s16-7.164 16-16v-16h224v16c0 8.836 7.163 16 16 16s16-7.164 16-16v-16h46c18.748 0 34 15.252 34 34v38h-448v-38c0-18.748 15.252-34 34-34zm380 408h-380c-18.748 0-34-15.252-34-34v-270h448v270c0 18.748-15.252 34-34 34z')
+                |                     #{tour.startDates[0].toLocaleString('en-us', { month: 'long', year: 'numeric' })}
+              .card__info-point-3.card__info-point
+                svg#Capa_1(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve')
+                  g
+                    g
+                      path(d='M424.385,20.69C401.182,6.768,376.445,0,348.761,0c-33.122,0-65.635,9.753-97.077,19.185\
+                         c-30.716,9.214-59.729,17.917-88.446,17.919c-0.004,0-0.007,0-0.011,0c-19.199,0-36.583-4.064-52.894-12.382V15\
+                         c0-8.284-6.716-15-15-15s-15,6.716-15,15v18.551v203.896V497c0,8.284,6.716,15,15,15s15-6.716,15-15V261.453\
+                         c16.567,6.4,34.052,9.547,52.906,9.547c33.121,0,65.631-9.753,97.071-19.185c30.718-9.215,59.733-17.919,88.451-17.919\
+                         c22.092,0,41.779,5.369,60.188,16.415c4.633,2.78,10.404,2.854,15.108,0.191c4.703-2.663,7.609-7.649,7.609-13.053V33.552\
+                         C431.667,28.283,428.903,23.4,424.385,20.69z M251.691,223.081C220.972,232.296,191.957,241,163.24,241\
+                         c-19.206,0-36.594-4.058-52.906-12.376V57.566c16.564,6.399,34.046,9.539,52.894,9.538c0.003,0,0.01,0,0.014,0\
+                         c33.118-0.002,65.626-9.754,97.063-19.185C291.024,38.704,320.042,30,348.761,30c19.206,0,36.594,4.058,52.905,12.375v171.06\
+                         c-16.566-6.4-34.052-9.539-52.905-9.539C315.641,203.896,283.13,213.649,251.691,223.081z')
+                |                     #{tour.locations.length} stops
+              .card__info-point-4.card__info-point
+                svg#Capa_1(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve')
+                  g
+                    g
+                      path(d='M437.02,330.98c-27.883-27.882-61.071-48.523-97.281-61.018C378.521,243.251,404,198.548,404,148\
+                         C404,66.393,337.607,0,256,0S108,66.393,108,148c0,50.548,25.479,95.251,64.262,121.962\
+                         c-36.21,12.495-69.398,33.136-97.281,61.018C26.629,379.333,0,443.62,0,512h40c0-119.103,96.897-216,216-216s216,96.897,216,216\
+                         h40C512,443.62,485.371,379.333,437.02,330.98z M256,256c-59.551,0-108-48.448-108-108S196.449,40,256,40\
+                         c59.551,0,108,48.448,108,108S315.551,256,256,256z')
+                |                     #{tour.maxGroupSize} people
+          footer.card__footer
+            section.card__detail-info-wrapper
+              .card__price
+                span $#{tour.price}
+                |  per person
+              .card__rating
+                span #{tour.ratingsAverage}
+                |  rating (#{tour.ratingsQuantity})
+
+            if bookingTours.includes(tour.slug) && !addReview
+              a.card__btn-detail.card__btn-buyed(href=`tour/${tour.slug}`) DETAILS
+            else
+              a.card__btn-detail(href=`tour/${tour.slug}`) DETAILS
+            if (addReview)
+              button.card__btn-detail.card__btn-review(class={hide:existsReview.includes(tour.slug)} data-title=`${tour.name}` data-tour=`${tour.id}` data-user=`${user.id}`) ADD REVIEW
+
+
+
+
+
+
+

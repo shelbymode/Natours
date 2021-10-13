@@ -1,0 +1,6 @@
+node_modules/
+.adminbro/
+.parcel-cache
+.idea/
+config.env
+.prettierrc

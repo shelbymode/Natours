@@ -1,0 +1,120 @@
+.container {
+  z-index: -1;
+  margin-top: 50px;
+  display: flex;
+  height: auto;
+  border: 1px solid #fff;
+  border-radius: 5%;
+  overflow: hidden;
+  box-shadow: 0px 7px 16px 10px rgba(34, 60, 80, 0.2);
+}
+
+hr {
+  opacity: 0.4;
+}
+
+.user__view-menu {
+  z-index: 1;
+  flex-basis: 20%;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#7dd56f), to(#28b487));
+  background-image: linear-gradient(to right bottom, #7dd56f, #28b487);
+}
+.user__menu-wrapper {
+  margin-top: 50px;
+  margin-left: 20px;
+}
+.user__view-content {
+  flex-basis: 80%;
+  background-color: #fffffc;
+}
+
+.menu a:hover li {
+  transform: translateX(15px);
+}
+.menu__item {
+  transition: all 0.2s ease-in 0s;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  font-size: 1.5rem;
+}
+.menu__item svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+  margin: 0 20px;
+}
+
+.form__content {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 70px;
+  width: 100%;
+  background: #fff;
+}
+.form__title {
+  color: #39ba83;
+  font-size: 22px;
+  font-weight: 700;
+}
+.form__input-title {
+  padding: 25px 0 15px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #777;
+}
+.form__input {
+  width: 100%;
+  display: block;
+  height: 50px;
+  background-color: #f3f2f3;
+  border: 0;
+  outline: none;
+  color: #777777;
+}
+.form__input::placeholder {
+  color: rgba(119, 119, 119, 0.5);
+}
+.form__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  font-size: 16px;
+  color: #fff;
+  width: 160px;
+  height: 45px;
+  background-color: #55c57a;
+  border-radius: 20px;
+  margin-top: 40px;
+  border: none;
+}
+
+.form__group.form__photo-upload {
+  margin-top: 30px;
+}
+.form__group.form__photo-upload img.form__user-photo {
+  width: 80px;
+  height: 80px;
+  clip-path: circle(50% at 50% 50%);
+}
+.form__group.form__photo-upload input.form__upload {
+  display: none;
+}
+.form__group.form__photo-upload label {
+  margin-left: 20px;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #55c57a;
+  padding: 10px;
+  border-bottom: #55c57a solid 3px;
+  transition: all 0.3s ease-out 0s;
+}
+.form__group.form__photo-upload label:hover {
+  color: #fff;
+  background-color: #55c57a;
+}
+
+/*# sourceMappingURL=account.css.map */

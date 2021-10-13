@@ -1,0 +1,15 @@
+extends ./layout/layout
+block stylesheets
+  link(rel='stylesheet' href='../../dist/css/layouts/signup/signup.css')
+
+block content
+  .container
+    form.form__content.form-signup
+      h1.form__title CREATE YOUR ACCOUNT
+      p.form__input-title Email address
+      input.form__input.form__input-signup-email(type='email' placeholder='you@example.com')
+      p.form__input-title Password
+      input.form__input.form__input-signup-password(type='password' placeholder='••••••••')
+      p.form__input-title Confirm password
+      input.form__input.form__input-signup-password-confirm(type='password' placeholder='••••••••')
+      button.form__button.signup(type="submit") SIGN UP

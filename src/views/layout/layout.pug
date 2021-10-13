@@ -1,0 +1,14 @@
+doctype html
+html
+  include ../partials/_head.pug
+  block stylesheets
+  script(defer type="module" src="../../../dist/index.js")
+  
+  body
+    include ../partials/_header.pug
+    block content
+
+    include ../partials/_footer.pug
+    script(src='https://js.stripe.com/v3/')
+
+  

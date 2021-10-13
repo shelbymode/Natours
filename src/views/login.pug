@@ -1,0 +1,20 @@
+extends ./layout/layout
+
+block stylesheets
+  link(rel='stylesheet' href='../../dist/css/layouts/login/login.css')
+
+block content
+  // Form
+
+  .container
+    form.form__content.form-login
+      h1.form__title LOG INTO YOUR ACCOUNT
+      p.form__input-title Email address
+      input.form__input.form__input-login(type='email' placeholder='you@example.com')
+      p.form__input-title Password
+      input.form__input.form__input-login(type='password' placeholder='••••••••')
+      a.forget-password(data-tooltip="Click to restore password, then enter email..." href="/forget-password") Forget?
+      button.form__button.login(type="submit") LOG IN
+    // Form
+
+

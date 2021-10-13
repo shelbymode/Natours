@@ -1,0 +1,15 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='icon' type='image/png' href='https://www.fuelly.com/favicon.ico')
+    link(rel='stylesheet' href='../../dist/css/layouts/login/login.css')
+    title Document
+    include partials/_style-restore-password.pug
+  body
+    .container-mail
+      p Hello genius! Today my subject is #{subject[0]}!
+      p  #{subject[1]} I know!
+      a(href=`${url}`) Click me

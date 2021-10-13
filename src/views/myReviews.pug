@@ -1,0 +1,31 @@
+extends ./layout/layout
+
+block stylesheets
+  link(rel='stylesheet' href='../../dist/css/layouts/reviews/reviews.css')
+  link(rel='stylesheet' href='../../dist/css/layouts/modal/modal.css')
+
+block content
+  .container
+    table
+      thead
+        tr
+          td #
+          td Name tour
+          td Review
+          td Created at
+          td Rating
+      tbody
+        if (reviews.length === 0)
+          tr
+            td(style=" width:100%; font-size:30px") You didn't leave either review (yet)!
+        else
+          each review,index in reviews
+            tr(class="card__btn-review" data-title=`${review.tour.name}` data-review=`${review._id}`)
+              td= index+1
+              td #{review.tour.name}
+              td #{review.review.split(' ')[0]} #{review.review.split(' ')[1]} #{review.review.split(' ')[2]} ...
+              td #{review.createdAt.toLocaleString('en-us', { month: 'long', year: 'numeric' })}
+              td #{review.rating}
+      // Form
+
+

@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #495057;
+  opacity: 0.8;
+  z-index: 10;
+}
+
+.modal-content {
+  box-shadow: 0px 10px 26px 5px rgba(34, 60, 80, 0.65);
+  border-radius: 10px;
+  position: absolute;
+  z-index: 11;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  background-color: #fff;
+}
+
+.modal-header {
+  align-items: center;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #76c893;
+
+  h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+}
+
+.modal-body {
+  padding: 0 10px 0 10px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.close-modal {
+  border-radius: 50%;
+  position: relative;
+  top: -20px;
+  right: -15px;
+  background-color: #fff;
+  color: #76c893;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(2);
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: scale(2.2);
+  }
+}
+
+textarea {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  resize: none;
+  width: 100%;
+  font-style: italic;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
+  color: #03071e;
+}
+
+label {
+  display: block;
+  color: #03071e;
+  font-weight: 300;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.btn-create {
+  background-color: #76c893;
+  height: 45px;
+  color: #fff;
+  font-weight: 400;
+  opacity: 0.8;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.btn-edit {
+  background-color: #76c893;
+  height: 45px;
+  color: #fff;
+  font-weight: 400;
+  opacity: 0.8;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.btn-remove {
+  background-color: #f07167;
+  height: 45px;
+  color: #fff;
+  font-weight: 400;
+  opacity: 0.8;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.slider {
+  display: flex;
+  margin: 20px auto;
+  width: 100%;
+
+  label {
+    display: block;
+    font-size: 13px;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 1 20%;
+    list-style: none;
+    position: relative;
+
+    //top:-50px;
+    &::after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      border-bottom: 2px solid #000;
+      width: 100%;
+      bottom: 5px;
+    }
+  }
+}
+
+ul {
+  margin: 10px 0;
+}

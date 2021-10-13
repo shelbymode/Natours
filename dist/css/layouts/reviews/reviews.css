@@ -1,0 +1,54 @@
+table {
+  width: 100%;
+  min-height: 57vh;
+}
+
+tr, td {
+  display: flex;
+  color: black;
+}
+
+tbody td {
+  color: #fff;
+  font-weight: 400;
+}
+
+thead tr td {
+  font-size: 25px;
+}
+
+thead tr {
+  padding: 10px 0;
+}
+
+tbody tr:nth-of-type(odd) {
+  background-color: #76c893;
+  transition: all 0.5s ease-out 0s;
+}
+tbody tr:nth-of-type(odd):hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+tbody tr:nth-of-type(even) {
+  background-color: #353535;
+  transition: all 0.5s ease-out 0s;
+}
+tbody tr:nth-of-type(even):hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+tbody tr:nth-of-type(even) td {
+  color: white;
+}
+
+td {
+  padding: 10px;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 30px;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=reviews.css.map */
