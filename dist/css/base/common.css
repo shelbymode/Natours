@@ -33,12 +33,19 @@ body {
   justify-content: space-between;
   padding: 0 60px 80px;
 }
+@media (max-width: 767px) {
+  .main {
+    justify-content: center;
+  }
+}
 
 .header {
-  height: 80px;
+  min-height: 80px;
   background-color: #444545;
+  margin-bottom: 20px;
 }
 .header__menu {
+  min-height: 80px;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -52,6 +59,7 @@ body {
 }
 .header__row {
   font: 300 16px Lato, sans-serif;
+  font-size: calc((17px) + 13 * (100vw - (320px)) / 1600);
 }
 .header__row img {
   width: 68px;
@@ -62,12 +70,52 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 575px) {
+  .header {
+    margin-bottom: 30px;
+  }
+  .header__menu {
+    padding: 20px 0;
+    min-height: 80px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header__row {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .header__row img {
+    width: 20%;
+  }
+  .header__row:nth-child(n) {
+    margin-left: 0px;
+  }
+  .header__row:first-child {
+    margin-bottom: 20px;
+  }
+  .header__authorization-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+  }
+  .header .link-login,
+.header .link-signup {
+    text-align: center;
+    margin: 0;
+    width: 90%;
+  }
+}
 
 .link-login {
   margin-right: 20px;
   padding: 20px;
   transition: all 0.2s ease 0s;
   font: 300 16px Lato, sans-serif;
+  font-size: calc((17px) + 13 * (100vw - (320px)) / 1600);
 }
 .link-login:hover {
   transform: translateY(-3px);
@@ -76,6 +124,7 @@ body {
 .link-signup {
   padding: 20px;
   font: 300 16px Lato, sans-serif;
+  font-size: calc((17px) + 13 * (100vw - (320px)) / 1600);
   transition: all 0.2s ease 0s;
 }
 .link-signup:hover {
@@ -106,6 +155,7 @@ img.header-img-preview {
   padding: 25px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .footer-global__logo-wrapper img {
   width: 150px;
@@ -120,14 +170,44 @@ img.header-img-preview {
 }
 .footer-global__link {
   margin: 6px;
-  font-size: 14px;
+  font-size: calc((30px) + 0 * (100vw - (320px)) / 1600);
   color: #777;
+  padding: 5px;
+  border: 4px solid transparent;
+  border-image: linear-gradient(to bottom right, rgba(125, 213, 111, 0.85), rgba(40, 180, 135, 0.85));
+  border-image-slice: 1;
+  transition: all 0.2s ease-in-out;
+}
+.footer-global__link:hover {
+  transform: scale(1.05);
 }
 .footer-global__author {
   font-size: 14px;
   color: #777;
   padding-top: 10px;
   text-align: right;
+}
+@media (max-width: 575px) {
+  .footer-global {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-global__menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .footer-global__menu {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .footer-global__author {
+    font-size: 20px;
+    color: #777;
+    padding-top: 10px;
+    text-align: center;
+  }
 }
 
 .alert {

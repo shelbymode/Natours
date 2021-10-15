@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 // COMMON
 a {
   outline: none !important;
@@ -33,15 +35,20 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 60px 80px;
+  @media (max-width: $screen-sm-max) {
+    justify-content: center;
+  }
 }
 
 // HEADER
 
 .header {
-  height: 80px;
+  min-height: 80px;
   background-color: #444545;
+  margin-bottom: 20px;
 
   &__menu {
+    min-height: 80px;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -58,6 +65,7 @@ body {
 
   &__row {
     font: 300 16px Lato, sans-serif;
+    @include adaptive-value("font-size", 30, 17);
 
     img {
       width: 68px;
@@ -70,6 +78,47 @@ body {
     justify-content: space-between;
     align-items: center;
   }
+
+  // ====BREAK-POINT (0-575px)====
+  @media (max-width: $screen-xs-max) {
+    &__menu {
+      padding: 20px 0;
+      min-height: 80px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__row {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+
+      img {
+        width: 20%;
+      }
+    }
+
+    &__row:nth-child(n) {
+      margin-left: 0px;
+    }
+    &__row:first-child {
+      margin-bottom: 20px;
+    }
+    margin-bottom: 30px;
+    &__authorization-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin: 0px;
+    }
+    .link-login,
+    .link-signup {
+      text-align: center;
+      margin: 0;
+      width: 90%;
+    }
+  }
 }
 
 .link-login {
@@ -77,6 +126,7 @@ body {
   padding: 20px;
   transition: all 0.2s ease 0s;
   font: 300 16px Lato, sans-serif;
+  @include adaptive-value("font-size", 30, 17);
 
   &:hover {
     transform: translateY(-3px);
@@ -86,6 +136,7 @@ body {
 .link-signup {
   padding: 20px;
   font: 300 16px Lato, sans-serif;
+  @include adaptive-value("font-size", 30, 17);
   transition: all 0.2s ease 0s;
 
   &:hover {
@@ -119,6 +170,7 @@ img.header-img-preview {
   padding: 25px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   &__logo-wrapper {
     img {
@@ -138,8 +190,17 @@ img.header-img-preview {
 
   &__link {
     margin: 6px;
-    font-size: 14px;
+    // font-size: 25px;
+    @include adaptive-value("font-size", 30, 30);
     color: #777;
+    padding: 5px;
+    border: 4px solid transparent;
+    border-image: linear-gradient(to bottom right, rgba(125, 213, 111, 0.85), rgba(40, 180, 135, 0.85));
+    border-image-slice: 1;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &__author {
@@ -147,6 +208,28 @@ img.header-img-preview {
     color: #777;
     padding-top: 10px;
     text-align: right;
+  }
+
+  // ====BREAK-POINT (0-575px)====
+  @media (max-width: $screen-xs-max) {
+    flex-direction: column;
+    align-items: center;
+    &__menu-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    &__menu {
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-evenly;
+    }
+    &__author {
+      font-size: 20px;
+      color: #777;
+      padding-top: 10px;
+      text-align: center;
+    }
   }
 }
 
