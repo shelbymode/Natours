@@ -7,7 +7,7 @@ header.header
         .header__row
             .header__authorization-wrapper
                 if user
-                    a.link-logout LOGOUT
+                    a.link-logout.link-active LOGOUT
                     a.link-me(href="/me")
                         img.header-img-preview(src=`../../../public/assets/users/${user.photo}`)
                 else

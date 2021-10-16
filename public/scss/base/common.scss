@@ -46,7 +46,15 @@ body {
 
 .header {
   min-height: 80px;
-  background-color: #444545;
+  background: hsla(0, 94%, 6%, 1);
+
+  background: linear-gradient(
+    315deg,
+    hsla(0, 94%, 6%, 1) 0%,
+    hsla(0, 67%, 58%, 1) 51%,
+    hsla(348, 20%, 5%, 1) 100%,
+    hsla(0, 14%, 65%, 1) 100%
+  );
   padding: 10px 0;
 
   &__menu {
@@ -96,8 +104,17 @@ body {
       width: 100%;
       justify-content: center;
 
+      .link-logout {
+        margin: 25px 0;
+      }
+
       img {
         width: 20%;
+      }
+      .header__authorization-wrapper {
+        img {
+          transform: scale(1.5);
+        }
       }
     }
 
@@ -167,11 +184,25 @@ img.header-img-preview {
 
 // FOOTER
 .footer-global {
+  background: hsla(0, 94%, 6%, 1);
+
+  background: linear-gradient(
+    315deg,
+    hsla(0, 94%, 6%, 1) 0%,
+    hsla(0, 67%, 58%, 1) 51%,
+    hsla(348, 20%, 5%, 1) 100%,
+    hsla(0, 14%, 65%, 1) 100%
+  );
+
   margin: 100px 0 30px 0;
   padding: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.7s ease-in-out;
+  &:hover {
+    opacity: 0.9;
+  }
 
   &__logo-wrapper {
     img {
@@ -193,7 +224,7 @@ img.header-img-preview {
     margin: 6px;
     // font-size: 25px;
     @include adaptive-value("font-size", 30, 25);
-    color: #777;
+    color: #fff;
     padding: 5px;
     border: 4px solid transparent;
     border-image: linear-gradient(to bottom right, rgba(125, 213, 111, 0.85), rgba(40, 180, 135, 0.85));
@@ -206,7 +237,7 @@ img.header-img-preview {
 
   &__author {
     font-size: 14px;
-    color: #777;
+    color: #fff;
     padding-top: 10px;
     text-align: right;
   }
@@ -227,7 +258,7 @@ img.header-img-preview {
     }
     &__author {
       font-size: 20px;
-      color: #777;
+      color: #fff;
       padding-top: 10px;
       text-align: center;
     }
