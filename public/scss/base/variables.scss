@@ -8,6 +8,8 @@ $screen-sm-max: 767px;
 $screen-md-max: 991px;
 $screen-lg-max: 1199px;
 
+$rotate: 8vw;
+
 // $max-width-container: 1200;
 
 @mixin adaptive-value($property, $start-size, $min-size) {

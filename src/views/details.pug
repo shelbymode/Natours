@@ -112,16 +112,15 @@ block content
         p.reference-info__text= tour.description
     // Quick description
     // Map
-  .map-wrapper
-    section.map
-      .map__preview-photos
-        .map__image1 
-          img(src=`../../public/assets/tours/${tour.images[0]}` alt='')
-        .map__image2
-          img(src=`../../public/assets/tours/${tour.images[1]}` alt='')
-        .map__image3
-          img(src=`../../public/assets/tours/${tour.images[2]}` alt='')
-      .map__map-points
+  .map
+    .map__preview-photos
+      .map__image1 
+        img(src=`../../public/assets/tours/${tour.images[0]}` alt='')
+      .map__image2
+        img(src=`../../public/assets/tours/${tour.images[1]}` alt='')
+      .map__image3
+        img(src=`../../public/assets/tours/${tour.images[2]}` alt='')
+    .map__map-points
 
     .container-map
       #map(data-locations= tour.locations)
