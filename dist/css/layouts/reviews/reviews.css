@@ -1,20 +1,31 @@
 table {
   width: 100%;
-  min-height: 57vh;
+  margin-top: 65px;
 }
 
-tr, td {
+tr,
+td {
   display: flex;
   color: black;
+  height: 100%;
 }
 
 tbody td {
   color: #fff;
   font-weight: 400;
+  font-size: calc((8px) + 12 * (100vw - (320px)) / 1600);
+  padding-top: calc((25px) + 10 * (100vw - (320px)) / 1600);
+  padding-bottom: calc((25px) + 10 * (100vw - (320px)) / 1600);
+  justify-content: center;
+}
+
+tbody td:nth-child(3n) {
+  justify-content: start;
 }
 
 thead tr td {
-  font-size: 25px;
+  font-size: calc((13px) + 12 * (100vw - (320px)) / 1600);
+  padding: 0;
 }
 
 thead tr {

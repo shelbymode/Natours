@@ -1,27 +1,36 @@
+@import "../../base/variables.scss";
+
 table {
   width: 100%;
-  //border: 1px solid #1b263b;
-  min-height: 57vh;
+  margin-top: 65px;
 }
 
-tr, td {
+tr,
+td {
   display: flex;
   color: black;
+  height: 100%;
 }
 tbody td {
   color: #fff;
   font-weight: 400;
+  @include adaptive-value("font-size", 20, 8);
+  @include adaptive-value("padding-top", 35, 25);
+  @include adaptive-value("padding-bottom", 35, 25);
+  justify-content: center;
+}
+tbody td:nth-child(3n) {
+  justify-content: start;
 }
 thead tr td {
-  font-size:25px;
+  @include adaptive-value("font-size", 25, 13);
+  padding: 0;
 }
 thead tr {
   padding: 10px 0;
 }
 
 tbody {
-
-
   tr:nth-of-type(odd) {
     background-color: #76c893;
     transition: all 0.5s ease-out 0s;
@@ -38,7 +47,7 @@ tbody {
 
     &:hover {
       transform: scale(1.05);
-      cursor: pointer
+      cursor: pointer;
     }
 
     td {
@@ -56,4 +65,3 @@ td {
   max-height: 30px;
   overflow: hidden;
 }
-

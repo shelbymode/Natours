@@ -18,3 +18,10 @@ $rotate: 8vw;
   $min-width: 320;
   #{$property}: calc((#{$min-size + px}) + ($add-size * (100vw - (#{$min-width + px})) / ($max-width - $min-width)));
 }
+
+@mixin adaptive-value2($property, $start-size, $min-size) {
+  $add-size: $start-size - $min-size;
+  $max-width: 1920;
+  $min-width: 320;
+  #{$property}: calc(calc((#{$min-size + px}) + ($add-size * (100vw - (#{$min-width + px})) / ($max-width - $min-width)))/1px*1%);
+}

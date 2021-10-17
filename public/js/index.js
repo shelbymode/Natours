@@ -13,7 +13,6 @@ import { hideAlert, showAlert } from './alert';
 let csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
 // Burger button
-
 const burgerBtn = document.querySelector('.burger-btn')
 const closeBtn = document.querySelector('.close-btn')
 const hAuthWrapper = document.querySelector('.header__authorization-wrapper')
@@ -28,7 +27,6 @@ closeBtn.addEventListener('click', e => {
   closeBtn.classList.add('hideVisible')
   hAuthWrapper.style.display = 'none'
 })
-
 
 // Loading mapbox
 const map = document.getElementById('map');

@@ -1,3 +1,5 @@
+@import "../../base/variables.scss";
+
 * {
   box-sizing: border-box;
 }
@@ -23,6 +25,10 @@
   transform: translateX(-50%);
   width: 50%;
   background-color: #fff;
+
+  @media (max-width: $screen-sm-max) {
+    width: 80%;
+  }
 }
 
 .modal-header {
@@ -72,7 +78,7 @@
 }
 
 textarea {
-  font-size: 1rem;
+  @include adaptive-value("font-size", 16, 10);
   letter-spacing: 1px;
   resize: none;
   width: 100%;
@@ -97,11 +103,12 @@ label {
 
 .btn-create {
   background-color: #76c893;
-  height: 45px;
   color: #fff;
   font-weight: 400;
   opacity: 0.8;
   transition: all 0.3s ease-out;
+  @include adaptive-value("height", 45, 30);
+  @include adaptive-value("font-size", 16, 10);
 
   &:hover {
     opacity: 1;
@@ -111,10 +118,11 @@ label {
 
 .btn-edit {
   background-color: #76c893;
-  height: 45px;
   color: #fff;
   font-weight: 400;
   opacity: 0.8;
+  @include adaptive-value("height", 45, 30);
+  @include adaptive-value("font-size", 16, 10);
   transition: all 0.3s ease-out;
 
   &:hover {
@@ -125,10 +133,11 @@ label {
 
 .btn-remove {
   background-color: #f07167;
-  height: 45px;
   color: #fff;
   font-weight: 400;
   opacity: 0.8;
+  @include adaptive-value("height", 45, 30);
+  @include adaptive-value("font-size", 16, 10);
   transition: all 0.3s ease-out;
 
   &:hover {
@@ -144,7 +153,7 @@ label {
 
   label {
     display: block;
-    font-size: 13px;
+    @include adaptive-value("font-size", 13, 9);
   }
 
   li {
@@ -164,6 +173,9 @@ label {
       width: 100%;
       bottom: 5px;
     }
+  }
+  @media (max-width: $screen-sm-max) {
+    // label
   }
 }
 
