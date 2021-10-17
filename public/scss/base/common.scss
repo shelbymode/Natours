@@ -91,6 +91,7 @@ body {
 
   // ====BREAK-POINT (0-575px)====
   @media (max-width: $screen-xs-max) {
+    margin-bottom: 10px;
     &__menu {
       padding: 20px 0;
       min-height: 80px;
