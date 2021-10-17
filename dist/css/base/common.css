@@ -243,26 +243,27 @@ img.header-img-preview {
   display: flex;
   align-items: center;
   position: fixed;
-  width: auto;
+  top: 0;
+  width: fit-content;
   padding: 20px 40px;
   left: 50%;
   transform: translateX(-50%);
   font-family: "Lato", sans-serif;
   font-weight: 800;
-  font-size: 30px;
+  font-size: calc((16px) + 14 * (100vw - (320px)) / 1600);
   z-index: 100;
-  opacity: 0.9;
+  opacity: 1;
 }
 .alert--red {
-  z-index: 100;
+  z-index: 10002;
   background-color: #f72585;
 }
 .alert--green {
-  z-index: 100;
+  z-index: 10002;
   background-color: #06d6a0;
 }
 .alert--lazure {
-  z-index: 100;
+  z-index: 10002;
   background-color: #00b4d8;
 }
 
@@ -270,12 +271,21 @@ img.header-img-preview {
 .link-me {
   opacity: 0.8;
   margin: 0 20px;
+  display: flex;
+  justify-content: center;
 }
 .link-logout:hover,
 .link-me:hover {
   cursor: pointer;
   transform: scale(1.1);
   opacity: 1;
+}
+@media (max-width: 575px) {
+  .link-logout,
+.link-me {
+    margin: 10px 0;
+    width: 30%;
+  }
 }
 
 .error {
