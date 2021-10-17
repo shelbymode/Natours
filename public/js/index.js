@@ -161,10 +161,10 @@ if (modalBtns) {
           try {
             const response = await axios({
               method: 'DELETE',
-              url: `/api/v1/reviews/${reviewId}`
-              // headers: {
-              //   'X-CSRF-Token': csrfToken // <-- is the csrf token as a header
-              // },
+              url: `/api/v1/reviews/${reviewId}`,
+              headers: {
+                'X-CSRF-Token': csrfToken // <-- is the csrf token as a header
+              },
             });
             if (response.status == '204') {
               showAlert('alert--green', 'Your review was been removed!');
@@ -194,10 +194,10 @@ if (modalBtns) {
               url: `/api/v1/reviews/${reviewId}`,
               data: {
                 review, rating
-              }
-              // headers: {
-              //   'X-CSRF-Token': csrfToken // <-- is the csrf token as a header
-              // },
+              },
+              headers: {
+                'X-CSRF-Token': csrfToken // <-- is the csrf token as a header
+              },
             });
             if (response.status == '200') {
               showAlert('alert--green', 'Your review was been edited!');
@@ -227,9 +227,9 @@ if (modalBtns) {
           const response = await axios({
             method: 'POST',
             url: '/api/v1/reviews',
-            // headers: {
-            //   'X-CSRF-Token': csrfToken // <-- is the csrf token as a header
-            // },
+            headers: {
+              'X-CSRF-Token': csrfToken // <-- is the csrf token as a header
+            },
             data: {
               review, rating, tour, user
             }

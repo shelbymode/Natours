@@ -33,7 +33,7 @@ app.post('/webhook-checkout', express.raw({ type: "*/*" }), bookingController.we
 
 app.use(express.json());
 app.use(cookieParser());
-// app.use(csrf(({ cookie: true })));
+app.use(csrf(({ cookie: true })));
 app.use(urlencoded({ extended: true }));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/dist', express.static(path.join(__dirname, 'dist')));
@@ -41,7 +41,7 @@ app.use(cors());
 app.use(helmet())
 app.use(compression());
 
-// app.use(authController.csrf);
+app.use(authController.csrf);
 
 
 app.use(admin.options.rootPath, authController.protect, authController.protectByRoles('admin', 'lead-guide'), router);

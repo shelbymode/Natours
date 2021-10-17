@@ -160,7 +160,7 @@ img.header-img-preview {
 .footer-global {
   background: #1e0101;
   background: linear-gradient(315deg, #1e0101 0%, #dc4c4c 51%, #0f0a0b 100%, #b29999 100%);
-  margin: 100px 0 30px 0;
+  margin: 100px 0 0 0;
   padding: 25px;
   display: flex;
   justify-content: space-between;
