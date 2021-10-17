@@ -1,3 +1,5 @@
+@import "../../base//variables.scss";
+
 .container {
   max-width: 1200px;
   height: 100%;
@@ -17,12 +19,19 @@ h1 {
   margin: 60px auto;
   box-shadow: 0px 7px 16px 10px rgba(34, 60, 80, 0.2);
   background: #fff;
+
+  @media (max-width: $screen-sm-max) {
+    margin-top: 0;
+    width: 90%;
+    padding: 25px;
+    margin-bottom: -70px;
+  }
 }
 
 .form {
   &__title {
     color: #39ba83;
-    font-size: 22px;
+    @include adaptive-value("font-size", 30, 18);
     font-weight: 700;
   }
 
@@ -68,6 +77,10 @@ h1 {
     margin-top: 40px;
     border: none;
   }
+
+  @media (max-width: $screen-sm-max) {
+    width: 90%;
+  }
 }
 
 .forget-password {
@@ -98,4 +111,3 @@ h1 {
     }
   }
 }
-

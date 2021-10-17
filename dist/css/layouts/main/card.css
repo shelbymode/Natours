@@ -1,22 +1,29 @@
 .card {
   margin-bottom: 60px;
   box-shadow: 7px 16px 10px rgba(34, 60, 80, 0.2);
-  width: 30%;
+  flex-basis: 30%;
   height: auto;
   background-color: #fff;
 }
-
+@media (max-width: 991px) {
+  .card {
+    flex-basis: 45%;
+  }
+}
+@media (max-width: 767px) {
+  .card {
+    flex-basis: 80%;
+  }
+}
 .card__header {
   position: relative;
   width: 100%;
   height: 240px;
 }
-
 .card__header:hover .card__background {
   transition: all 0.6s ease-out 0s;
   opacity: 0;
 }
-
 .card__img-background {
   position: absolute;
   top: 0;
@@ -25,7 +32,6 @@
   height: 100%;
   clip-path: polygon(0 0, 100% 0, 100% 83%, 0% 100%);
 }
-
 .card__background {
   position: absolute;
   top: 0;
@@ -36,10 +42,9 @@
   opacity: 0.7;
   clip-path: polygon(0 0, 100% 0, 100% 83%, 0% 100%);
 }
-
 .card__tour-title1 {
   font-weight: 300;
-  font-size: 27.5px;
+  font-size: calc((21px) + 6.5 * (100vw - (320px)) / 1600);
   padding: 15px 20px 10px 20px;
   background-image: linear-gradient(to bottom right, rgba(125, 213, 111, 0.85), rgba(40, 180, 135, 0.85));
   position: absolute;
@@ -47,10 +52,9 @@
   top: 56%;
   color: white;
 }
-
 .card__tour-title2 {
   font-weight: 300;
-  font-size: 27.5px;
+  font-size: calc((21px) + 6.5 * (100vw - (320px)) / 1600);
   padding: 10px 20px;
   background-image: linear-gradient(to bottom right, rgba(125, 213, 111, 0.85), rgba(40, 180, 135, 0.85));
   position: absolute;
@@ -58,20 +62,17 @@
   bottom: 0;
   color: white;
 }
-
 .card__main {
   width: 100%;
   height: 210px;
   padding: 25px 15px;
 }
-
 .card__tour-desc-title {
   color: #777;
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 700;
 }
-
 .card__tour-desc {
   padding: 20px 0;
   color: #777;
@@ -79,30 +80,26 @@
   font-weight: 300;
   font-style: italic;
 }
-
 .card__info-points-wrapper {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
 }
-
 .card__info-point {
-  font-size: 14px;
+  font-size: calc((11px) + 3 * (100vw - (320px)) / 1600);
   flex-basis: 50%;
   color: #777;
   margin: 5px 0;
   display: flex;
   justify-content: flex-start;
 }
-
 .card__info-point svg {
   margin-right: 10px;
   width: 20px;
   height: 20px;
   fill: #81d49a;
 }
-
 .card__footer {
   display: flex;
   justify-content: space-between;
@@ -110,33 +107,28 @@
   background-color: #f6f6f7b2;
   padding: 25px 20px;
 }
-
 .card__detail-info-wrapper {
   display: flex;
   flex-direction: column;
 }
-
 .card__price {
   padding: 10px 0;
   color: #999;
 }
-
 .card__price span {
   color: black;
   font-size: 14px;
+  font-size: calc((11px) + 3 * (100vw - (320px)) / 1600);
   font-weight: 400;
 }
-
 .card__rating {
   color: #999;
 }
-
 .card__rating span {
   color: black;
   font-size: 14px;
   font-weight: 400;
 }
-
 .card__btn-detail {
   position: relative;
   display: flex;
@@ -151,8 +143,9 @@
   border: 2px solid #0daa41;
   background-color: white;
   transition: all 0.5s ease 0s;
+  font-size: 16px;
+  font-size: calc((12px) + 4 * (100vw - (320px)) / 1600);
 }
-
 .card__btn-detail::before {
   content: "";
   position: absolute;
@@ -166,14 +159,16 @@
   z-index: -1;
   transition: all 0.5s ease 0s;
 }
-
 .card__btn-detail:hover {
   color: white;
   border: 3px solid white;
 }
-
 .card__btn-detail:hover::before {
   width: 100%;
+}
+.card__btn-review {
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 .card__btn-buyed {
@@ -183,7 +178,5 @@
 .card--buyed {
   filter: brightness(60%);
 }
-
-/*# sourceMappingURL=card.css.map */
 
 /*# sourceMappingURL=card.css.map */

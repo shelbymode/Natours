@@ -1,6 +1,7 @@
+@import "../../base//variables.scss";
+
 .container {
   background-color: #fff;
-  padding-bottom: 10px;
 }
 
 .desc-preview {
@@ -18,7 +19,7 @@
     width: 100%;
     height: 100%;
     z-index: 2;
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - $rotate), 0 100%);
   }
 
   &::after {
@@ -30,12 +31,12 @@
     width: 100%;
     height: 100%;
     z-index: 3;
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - $rotate), 0 100%);
   }
 
   &__title1 {
     font-weight: 300;
-    font-size: 50px;
+    @include adaptive-value("font-size", 50, 30);
     padding: 15px 20px 10px 20px;
     background-image: linear-gradient(to bottom right, rgba(125, 213, 111, 0.85), rgba(40, 180, 135, 0.85));
     position: absolute;
@@ -48,7 +49,7 @@
 
   &__title2 {
     font-weight: 300;
-    font-size: 50px;
+    @include adaptive-value("font-size", 50, 30);
     padding: 15px 20px 10px 20px;
     background-image: linear-gradient(to bottom right, rgba(125, 213, 111, 0.85), rgba(40, 180, 135, 0.85));
     position: absolute;
@@ -61,7 +62,7 @@
 
   &__title3 {
     font-weight: 300;
-    font-size: 50px;
+    @include adaptive-value("font-size", 50, 30);
     padding: 15px 20px 10px 20px;
     background-image: linear-gradient(to bottom right, rgba(125, 213, 111, 0.85), rgba(40, 180, 135, 0.85));
     position: absolute;
@@ -117,22 +118,22 @@
 }
 
 .quick-desc {
-  position: relative;
+  // position: relative;
   width: 100%;
   display: flex;
   flex-direction: row;
 
-  &::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    background-color: #f7f7f7;
-    z-index: 1;
-    transform: translateY(-66%);
-    width: 50%;
-    height: 10%;
-  }
+  // &::before {
+  //   position: absolute;
+  //   content: "";
+  //   top: 0;
+  //   left: 0;
+  //   background-color: #f7f7f7;
+  //   z-index: 1;
+  //   transform: translateY(-66%);
+  //   width: 50%;
+  //   height: 10%;
+  // }
 
   &__facts-wrapper {
     display: flex;
@@ -154,7 +155,36 @@
     height: 100%;
     flex-basis: 50%;
     background-color: #fff;
-    padding: 50px 100px 0 100px;
+    padding: 50px 100px 60px 100px;
+  }
+  @media (max-width: $screen-md-max) {
+    flex-direction: column;
+    &__facts-wrapper {
+      padding-bottom: 30px;
+    }
+
+    &__wrapper-baseline {
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 100%;
+      align-items: baseline;
+      padding-top: 0;
+    }
+
+    &__reference-text-wrapper {
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    &__facts-wrapper {
+    }
+
+    &__wrapper-baseline {
+      flex-direction: column;
+    }
+
+    &__reference-text-wrapper {
+      padding: 10%;
+    }
   }
 }
 
@@ -164,7 +194,7 @@
   align-items: center;
 
   &__title {
-    font-size: 22.5px;
+    @include adaptive-value("font-size", 22.5, 17);
     font-weight: 700;
     margin-bottom: 20px;
     color: transparent;
@@ -202,6 +232,10 @@
     font-size: 14px;
     font-weight: 400;
   }
+  @media (max-width: $screen-xs-max) {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 
 .tour-guides {
@@ -210,8 +244,8 @@
   align-items: center;
 
   &__title {
-    margin-top: 60px;
-    font-size: 22.5px;
+    margin-top: 40px;
+    @include adaptive-value("font-size", 22.5, 17);
     font-weight: 700;
     margin-bottom: 25px;
     color: transparent;
@@ -225,7 +259,6 @@
 
   &__item {
     padding: 10px 10px 10px 0;
-
     img {
       width: 35px;
       height: 35px;
@@ -246,11 +279,14 @@
     font-size: 14px;
     font-weight: 400;
   }
+  @media (max-width: $screen-xs-max) {
+    width: 100%;
+  }
 }
 
 .reference-info {
   &__title {
-    font-size: 22.5px;
+    @include adaptive-value("font-size", 22.5, 15);
     font-weight: 700;
     margin-bottom: 20px;
     color: transparent;
@@ -270,50 +306,39 @@
 }
 
 .map {
+  // display: none;
   width: 100%;
-  height: 400px;
-  position: relative;
-  top: -150px;
-  // top: 1004px;
-  // left: 50%;
+  height: auto;
   z-index: 1;
-  // transform: translateX(-50%);
 
   &__preview-photos {
-    position: relative;
+    transform: translateY(-20px);
     display: flex;
-    height: 100%;
+    height: auto;
     z-index: 1;
-
+    top: 0;
+    width: 100%;
     img {
-      clip-path: polygon(0 17%, 100% 0, 100% 83%, 0 100%);
+      object-fit: contain;
+      clip-path: polygon(0 12%, 100% 0, 100% 88%, 0 100%);
       width: 100%;
     }
   }
 
   &__image1 {
-    display: inline-block;
-    width: 100/3 * 1%;
-    left: 0;
-    bottom: -6.5%;
-    position: absolute;
+    position: relative;
+    flex-basis: 33.3%;
+    @include adaptive-value("top", 50, 8);
   }
 
   &__image2 {
-    display: inline-block;
-    width: 100/3 * 1%;
-    position: absolute;
-    left: 33.3%;
-    top: 50%;
-    transform: translateY(-50%);
+    flex-basis: 33.3%;
   }
 
   &__image3 {
-    display: inline-block;
-    width: 100/3 * 1%;
-    position: absolute;
-    right: 0;
-    top: -6.5%;
+    position: relative;
+    flex-basis: 33.3%;
+    @include adaptive-value("bottom", 50, 8);
   }
 
   &__map-points {
@@ -323,14 +348,14 @@
 // Reviews
 .reviews {
   position: relative;
-  top: -270px;
   width: 100%;
-  height: 755px;
-  clip-path: polygon(0 24%, 100% 0, 100% 76%, 0 100%);
+  clip-path: polygon(0 $rotate, 100% 0, 100% calc(100% - $rotate), 0 100%);
   background: linear-gradient(to right bottom, #7dd56f, #28b487);
   display: flex;
   align-items: center;
   z-index: 2;
+  @include adaptive-value("top", -277, -75);
+  @include adaptive-value("height", 700, 330);
 
   &::before {
     position: absolute;
@@ -354,7 +379,7 @@
 
 .reviews-card {
   margin: 0 50px;
-  min-width: 400px;
+  min-width: 300px;
   background-color: #fff;
   justify-content: space-evenly;
   display: flex;
@@ -379,13 +404,13 @@
 
   &__user-name {
     color: #777;
-    font-size: 15px;
+    @include adaptive-value("font-size", 15, 12);
     font-weight: 600;
   }
 
   &__review-text {
     color: #777;
-    font-size: 14px;
+    @include adaptive-value("font-size", 14, 10);
     font-weight: 300;
     line-height: 1.6;
     font-style: italic;
@@ -408,7 +433,8 @@
 }
 
 .booktoor {
-  margin: 60px auto 0px auto;
+  margin: 0 auto;
+  padding-right: 10px;
   width: 100%;
   height: 200px;
   border-radius: 15px;
@@ -457,7 +483,7 @@
   }
 
   &__title {
-    font-size: 22.5px;
+    @include adaptive-value("font-size", 22.5, 16);
     font-weight: 700;
     margin-bottom: 20px;
     color: transparent;
@@ -467,7 +493,7 @@
   }
 
   &__text {
-    font-size: 19px;
+    @include adaptive-value("font-size", 19, 14);
     color: #777;
   }
 
@@ -477,7 +503,7 @@
     align-items: center;
     flex-grow: 0.7;
     padding: 0 20px;
-    margin: 0 0 0 50px;
+    margin: 0 0 0 25px;
     height: 50px;
     color: #fff;
     border-radius: 15px;
@@ -489,20 +515,54 @@
       cursor: pointer;
     }
   }
+  @media (max-width: $screen-md-max) {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: auto;
+    padding: 20px 0;
+    &__img-wrapper {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      img {
+        position: static;
+      }
+    }
+
+    &__img1,
+    &__img2,
+    &__img3 {
+      width: 100%;
+      transform: translateY(0);
+    }
+
+    &__content {
+      margin-top: 40px;
+      max-width: 100%;
+      padding: 0 10px;
+    }
+
+    &__button {
+      margin-left: 0;
+      margin-top: 50px;
+    }
+  }
 }
 
 #map {
-  z-index: 0;
-  position: relative;
-  top: -295px;
+  z-index: 1;
   width: 100%;
-  height: 700px;
-  clip-path: polygon(0 24%, 100% 0, 100% 76%, 0 100%);
+  height: 100%;
+  clip-path: polygon(0 $rotate, 100% 0, 100% calc(100% - $rotate), 0% 100%);
+  // clip-path: polygon(0 $rotate, 100% 0, 100% calc(100% - $rotate), 0 100%);
 }
 
 .container-map {
-  height: 500px;
+  @include adaptive-value("height", 700, 500);
   width: 100%;
+  position: relative;
+  @include adaptive-value("top", -123, -50)
 }
 
 .marker {
@@ -531,5 +591,7 @@
   max-height: 1200px;
 }
 .container-footer {
-  margin-top: -300px;
+  width: 90%;
+  position: relative;
+  @include adaptive-value("top", -100, 20);
 }
