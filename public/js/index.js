@@ -12,6 +12,24 @@ import { hideAlert, showAlert } from './alert';
 
 let csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
+// Burger button
+
+const burgerBtn = document.querySelector('.burger-btn')
+const closeBtn = document.querySelector('.close-btn')
+const hAuthWrapper = document.querySelector('.header__authorization-wrapper')
+burgerBtn.addEventListener('click', e => {
+  burgerBtn.classList.add('hideVisible')
+  closeBtn.classList.remove('hideVisible')
+  hAuthWrapper.style.display = 'flex'
+})
+
+closeBtn.addEventListener('click', e => {
+  burgerBtn.classList.remove('hideVisible')
+  closeBtn.classList.add('hideVisible')
+  hAuthWrapper.style.display = 'none'
+})
+
+
 // Loading mapbox
 const map = document.getElementById('map');
 if (map) {

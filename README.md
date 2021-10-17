@@ -1,7 +1,7 @@
 # **Natours**
 
-To visit site use link: https://natours-lormida.herokuapp.com/ (use login: admin@natours.com ; password: midapa)
-To check description API use [documentation](https://documenter.getpostman.com/view/16854861/UV5Ro1oP)
+- To visit site use link: https://natours-lormida.herokuapp.com/ (use login: admin@natours.com ; password: midapa)
+- To check description API use [documentation](https://documenter.getpostman.com/view/16854861/UV5Ro1oP)
 
 **Description**
 
