@@ -40,7 +40,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 60px 80px;
+  padding-top: 0;
+  padding-bottom: 80px;
+  @include adaptive-value("padding-right", 60, 0);
+  @include adaptive-value("padding-left", 60, 0);
   @media (max-width: $screen-sm-max) {
     justify-content: center;
   }
@@ -210,7 +213,7 @@ img.header-img-preview {
   );
 
   margin-top: 100px;
-  padding: 25px;
+  padding: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -220,6 +223,7 @@ img.header-img-preview {
   }
 
   &__logo-wrapper {
+    padding: 5px;
     img {
       width: 150px;
       height: 30px;
@@ -337,7 +341,7 @@ img.header-img-preview {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  @include adaptive-value("width", 960, 250);
   height: auto;
   padding: 50px;
   margin: 50px auto;
@@ -353,7 +357,7 @@ img.header-img-preview {
   &__info-message {
     color: #f72585;
     font-weight: 700;
-    font-size: 35px;
+    @include adaptive-value("font-size", 35, 14);
     font-family: "Lato", sans-serif;
   }
 }
